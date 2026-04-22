@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models import Expense
-from schemas import ExpenseCreate
+from backend.models import Expense
+from backend.schemas import ExpenseCreate
 
 def create_expense(db: Session, expense: ExpenseCreate):
     existing = db.query(Expense).filter(
