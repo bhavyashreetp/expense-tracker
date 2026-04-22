@@ -2,9 +2,9 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.database import SessionLocal, engine, Base
-from backend.crud import create_expense, get_expenses
-from backend.schemas import ExpenseCreate, ExpenseResponse
+from .database import SessionLocal, engine, Base
+from .crud import create_expense, get_expenses
+from .schemas import ExpenseCreate, ExpenseResponse
 
 Base.metadata.create_all(bind=engine)
 

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date, DateTime, Numeric, engine
 from datetime import datetime
-from backend.database import Base
-from backend.models import Expense
+from .database import Base
+from .models import Expense
 Base.metadata.create_all(bind=engine)
 
 class Expense(Base):
