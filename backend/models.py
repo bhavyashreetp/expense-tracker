@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, Date, DateTime, Numeric
+from sqlalchemy import Column, Integer, String, Date, DateTime, Numeric, engine
 from datetime import datetime
-from database import Base
+from backend.database import Base
+from backend.models import Expense
+Base.metadata.create_all(bind=engine)
 
 class Expense(Base):
     __tablename__ = "expenses"
@@ -12,3 +14,5 @@ class Expense(Base):
     date = Column(Date, nullable=False)
     created_at = Column(DateTime, default=datetime)
     request_id = Column(String, unique=True, nullable=False)
+
+
